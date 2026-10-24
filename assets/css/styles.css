@@ -148,10 +148,14 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
   animation: bob 7s ease-in-out infinite;
 }
-.planet .ball { position: relative; flex: none; width: 20px; height: 20px; border-radius: 50%; }
+.planet .ball { position: relative; flex: none; width: 20px; height: 20px; border-radius: 50%; box-shadow: 0 0 10px 1px #ffffff22; }
+/* Each planet's dot sits exactly on its orbit: the element is placed at the orbit point,
+   then shifted so the dot's centre (border + padding + half the dot) lands on that point. */
+.planet { --dot: 18px; translate: calc(-1 * var(--dot)) -50%; }
+.planet.rev { flex-direction: row-reverse; padding: 6px 7px 6px 14px; translate: calc(-100% + var(--dot)) -50%; }
 .planet:nth-of-type(2) { animation-delay: -1.5s; } .planet:nth-of-type(3) { animation-delay: -3s; }
 .planet:nth-of-type(4) { animation-delay: -4.5s; } .planet:nth-of-type(5) { animation-delay: -6s; }
-@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes bob { 0%, 100% { box-shadow: 0 0 0 0 transparent; } 50% { box-shadow: 0 0 18px 2px #8fd8c133; } }
 /* Two little moons for the cats */
 .moons { position: absolute; inset: -9px; animation: spin 14s linear infinite; }
 .moons::before, .moons::after { content: ""; position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--text); opacity: .85; }
@@ -262,7 +266,8 @@ footer .heart { color: var(--warm); }
   .lead { font-size: 17.5px; }
   .now { font-size: 14px; border-radius: 16px; align-items: flex-start; }
   .now i { margin-top: 7px; }
-  .planet { font-size: 11.5px; padding: 4px 9px 4px 5px; gap: 6px; }
+  .planet { font-size: 11.5px; padding: 4px 9px 4px 5px; gap: 6px; --dot: 13px; }
+  .planet.rev { padding: 4px 5px 4px 9px; }
   .planet .ball { width: 14px; height: 14px; }
   .moons { inset: -7px; }
   .section { padding-top: 60px; }
