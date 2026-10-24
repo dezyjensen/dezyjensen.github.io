@@ -6,8 +6,7 @@
   <title>Dezy Jensen</title>
   <meta name="description" content="Physicist by training, curious by nature. A developer in Edmonton exploring security, AI and how things work.">
   <meta name="author" content="Dezy Jensen">
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141526">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fde3d4">
+  <meta name="theme-color" content="#141526">
   <link rel="canonical" href="https://dezyjensen.github.io/">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 
@@ -24,9 +23,7 @@
     (function () {
       var t = null;
       try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "day" && t !== "night") {
-        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "day" : "night";
-      }
+      if (t !== "day" && t !== "night") { t = "night"; } // night is the default
       document.documentElement.setAttribute("data-theme", t);
     })();
   </script>
@@ -103,7 +100,7 @@
             <circle r="4" fill="#f0c27e"><animateMotion dur="95s" repeatCount="indefinite" path="M620,300 a300,240 0 1,1 -600,0 a300,240 0 1,1 600,0"/></circle>
           </g>
         </svg>
-        <div class="sun"><span class="mono">DJ</span><!-- To use a photo: replace this span with <img src="assets/img/dezy.jpg" alt="Dezy Jensen"> --></div>
+        <div class="sun"><img src="assets/img/dezy.webp" alt="Dezy Jensen, smiling, in round glasses and a black blazer" width="640" height="640"></div>
         <div class="planet" style="right:22%;top:6.7%"><span class="ball" style="background:radial-gradient(circle at 35% 35%,#fff6,#f0c27e)"></span>Physics</div>
         <div class="planet" style="left:2.8%;top:25%"><span class="ball" style="background:radial-gradient(circle at 35% 35%,#fff6,#c9a3f2)"></span>Security</div>
         <div class="planet" style="right:3%;top:46.5%"><span class="ball" style="background:radial-gradient(circle at 35% 35%,#fff6,#8fd8c1)"></span>AI and new tech</div>
@@ -165,7 +162,7 @@
       <ol class="timeline">
         <li id="s-physics" style="--c:#f0c27e"><p class="yr">UNTIL 2021</p><h3>Physics</h3><p>A Bachelor of Science in Physics at the University of Victoria. I studied physics because I wanted to understand how the world works. My degree had a computational focus, so a lot of it was writing code to model and analyse real systems, which is where everything that came next began.</p></li>
         <li id="s-research" style="--c:#c9a3f2"><p class="yr">DURING UNIVERSITY</p><h3>Research</h3><p>During my physics degree I took on a research project on metamaterials: materials engineered so that their structure, not just what they're made of, gives them unusual properties, like bending light or sound in ways natural materials can't.</p></li>
-        <li id="s-fellowship" style="--c:#8fd8c1"><p class="yr">2023 – 2024</p><h3>Fellowship</h3><p>A fellowship at Cybera in Edmonton, where I led the development of a machine-learning dashboard that predicts pipeline corrosion for oil and gas companies. We were careful to protect the sensitive data behind it.</p></li>
+        <li id="s-fellowship" style="--c:#8fd8c1"><p class="yr">2023 – 2024</p><h3>Fellowship</h3><p>A fellowship at Cybera in Edmonton, where I built a machine-learning dashboard that predicts pipeline corrosion for oil and gas companies. We were careful to protect the sensitive data behind it.</p></li>
         <li id="s-building" style="--c:#f2a385"><p class="yr">2022 – NOW</p><h3>Building</h3><p>At Appsquire, a software consultancy in Edmonton, I build and look after the apps, APIs and cloud systems behind a smart hot tub platform: the things people use from their phones or ask their voice assistant to do. I like making technology quietly faster and more dependable. One of my favourite fixes cut voice-command response times in half.</p></li>
         <li id="s-protecting" style="--c:#c9a3f2"><p class="yr">ALONG THE WAY</p><h3>Protecting</h3><p>Along the way I found the part I care about most: keeping people and their information safe. I've closed sign-in loopholes, cleaned secrets out of code, and rolled out security fixes carefully enough that nobody got locked out.</p></li>
         <li id="s-next" style="--c:#8fd8c1"><p class="yr">NEXT</p><h3>Still exploring</h3><p>Right now I'm learning to build with AI agents and going deeper into cybersecurity. I'm curious about where both are heading, and how AI is going to shape our future.</p></li>
