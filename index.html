@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dezy Jensen</title>
+  <meta name="description" content="Physicist by training, curious by nature. A developer in Edmonton exploring security, AI and how things work.">
+  <meta name="author" content="Dezy Jensen">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141526">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fde3d4">
+  <link rel="canonical" href="https://dezyjensen.github.io/">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <!-- Link previews (LinkedIn, email, messages) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dezyjensen.github.io/">
+  <meta property="og:title" content="Dezy Jensen">
+  <meta property="og:description" content="Physicist by training, curious by nature.">
+  <meta property="og:image" content="https://dezyjensen.github.io/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Set day/night before the page draws, so there's no flash -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "day" && t !== "night") {
+        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "day" : "night";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="preload" href="assets/fonts/lmroman17-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Sky: stars at night, clouds by day -->
+<div class="sky" aria-hidden="true">
+  <canvas id="stars"></canvas>
+  <div class="night-only" id="twinkles">
+    <div class="glow" style="width:900px;height:600px;right:-250px;top:-150px;background:radial-gradient(ellipse,#c9a3f224,transparent 65%)"></div>
+    <div class="glow" style="width:700px;height:500px;right:0;top:760px;background:radial-gradient(ellipse,#f2a38514,transparent 65%)"></div>
+    <div class="glow" style="width:900px;height:500px;left:-200px;top:1500px;background:radial-gradient(ellipse,#8fd8c11c,transparent 65%)"></div>
+  </div>
+  <div class="day-only">
+    <div class="glow" style="width:900px;height:700px;right:-160px;top:-180px;background:radial-gradient(ellipse,#ffd3a855,transparent 62%)"></div>
+    <div class="cloud" style="width:340px;height:70px;left:-60px;top:120px"></div>
+    <div class="cloud" style="width:220px;height:50px;left:180px;top:175px;opacity:.5;animation-duration:120s"></div>
+    <div class="cloud" style="width:420px;height:80px;right:-120px;top:760px;animation-duration:110s"></div>
+    <div class="cloud" style="width:260px;height:56px;left:80px;top:1350px;opacity:.6"></div>
+    <div class="cloud" style="width:380px;height:70px;right:120px;top:2000px;opacity:.5;animation-duration:130s"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <header class="nav">
+    <a class="logo" href="#top" aria-label="Dezy Jensen, back to top">Dezy Jensen<span>.</span></a>
+    <div class="nav-right">
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#path">Path</a></li>
+          <li><a href="#notes">Notes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="toggle" role="group" aria-label="Day or night theme">
+        <button type="button" data-set-theme="day" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <span class="lbl">Day</span>
+        </button>
+        <button type="button" data-set-theme="night" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <span class="lbl">Night</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ Welcome ============ -->
+    <section class="hero" id="top">
+      <div>
+        <p class="hello">Hi, I'm Dezy.</p>
+        <h1>Curious about <span class="grad">how things work.</span></h1>
+        <p class="lead">I studied physics because I wanted to understand how the world works, and that curiosity never switched off. These days I point it at technology: how it's built, how to keep it safe, and where it's heading next.</p>
+        <p class="now"><i aria-hidden="true"></i><span><b>Currently:</b> exploring AI agents and cybersecurity</span></p>
+      </div>
+
+      <div class="system" role="img" aria-label="A small solar system with Dezy at the centre, orbited by the things she cares about: physics, security, AI and new technology, always learning, and home with her husband and their cats Monty and Ori.">
+        <svg viewBox="0 0 640 600" aria-hidden="true">
+          <defs><filter id="blur3"><feGaussianBlur stdDeviation="3"/></filter></defs>
+          <ellipse class="orbit" cx="320" cy="300" rx="150" ry="118"/>
+          <ellipse class="orbit" cx="320" cy="300" rx="225" ry="178" stroke-dasharray="2 6"/>
+          <ellipse class="orbit" cx="320" cy="300" rx="300" ry="240"/>
+          <!-- small bodies travelling along the orbits -->
+          <g>
+            <circle r="10" fill="#8fd8c1" opacity=".35" filter="url(#blur3)"><animateMotion dur="38s" repeatCount="indefinite" path="M470,300 a150,118 0 1,1 -300,0 a150,118 0 1,1 300,0"/></circle>
+            <circle r="5" fill="#8fd8c1"><animateMotion dur="38s" repeatCount="indefinite" path="M470,300 a150,118 0 1,1 -300,0 a150,118 0 1,1 300,0"/></circle>
+            <circle r="5" fill="#c9a3f2"><animateMotion dur="64s" repeatCount="indefinite" path="M95,300 a225,178 0 1,0 450,0 a225,178 0 1,0 -450,0"/></circle>
+            <circle r="4" fill="#f0c27e"><animateMotion dur="95s" repeatCount="indefinite" path="M620,300 a300,240 0 1,1 -600,0 a300,240 0 1,1 600,0"/></circle>
+          </g>
+        </svg>
+        <div class="sun"><span class="mono">DJ</span><!-- To use a photo: replace this span with <img src="assets/img/dezy.jpg" alt="Dezy Jensen"> --></div>
+        <div class="planet" style="right:22%;top:6.7%"><span class="ball" style="background:radial-gradient(circle at 35% 35%,#fff6,#f0c27e)"></span>Physics</div>
+        <div class="planet" style="left:2.8%;top:25%"><span class="ball" style="background:radial-gradient(circle at 35% 35%,#fff6,#c9a3f2)"></span>Security</div>
+        <div class="planet" style="right:3%;top:46.5%"><span class="ball" style="background:radial-gradient(circle at 35% 35%,#fff6,#8fd8c1)"></span>AI and new tech</div>
+        <div class="planet" style="left:9.4%;top:71.7%"><span class="ball" style="background:radial-gradient(circle at 35% 35%,#fff6,#f2a385)"></span>Always learning</div>
+        <div class="planet" style="right:7%;top:84.2%" title="My husband and our cats, Monty and Ori"><span class="ball" style="background:radial-gradient(circle at 35% 35%,#fff6,#8fd8c1)"><span class="moons" aria-hidden="true"></span></span>Home, plus Monty and Ori</div>
+      </div>
+    </section>
+
+    <!-- ============ About ============ -->
+    <section class="section reveal" id="about">
+      <p class="kicker">About me</p>
+      <h2>A curious mind, pointed at technology</h2>
+      <div class="about">
+        <div class="about-text">
+          <p>I'm a developer in Edmonton with a physics degree and a lifelong habit of asking <em>why</em>. I like understanding how things work, whether that's the universe, a piece of software, or the reason a system behaves the way it does.</p>
+          <p>Most of my work is building software that people rely on every day, and making it faster, steadier and safer. Over time I've found myself drawn to security: technology is at its best when people can trust it.</p>
+          <p>Outside of work you'll find me at home with my husband and our two cats, Monty and Ori, usually with a science fiction book nearby.</p>
+        </div>
+        <ul class="facts">
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>Based in</b>Edmonton, Alberta</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></span><span><b>Studied</b>Physics, University of Victoria</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg></span><span><b>Building at</b>Appsquire, since 2022</span></li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg></span><span><b>Home</b>My husband and our cats, Monty and Ori</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Path (constellation) ============ -->
+    <section class="section reveal" id="path">
+      <p class="kicker">My path</p>
+      <h2>A constellation of where I've been</h2>
+      <p class="intro">Each star is a chapter. Choose one to read the story behind it.</p>
+
+      <div class="constellation">
+        <svg viewBox="0 0 1084 430" preserveAspectRatio="none" aria-hidden="true">
+          <polyline class="path-line" points="40,300 250,150 470,250 680,110 880,210 1050,90"/>
+        </svg>
+        <button class="star-btn" style="left:3.7%;top:69.8%;--c:#f0c27e" data-story="physics" aria-pressed="false"><span class="halo"></span><span class="core"></span><span class="visually-hidden">Physics</span></button>
+        <button class="star-btn" style="left:23.1%;top:34.9%;--c:#c9a3f2" data-story="research" aria-pressed="false"><span class="halo"></span><span class="core"></span><span class="visually-hidden">Research</span></button>
+        <button class="star-btn" style="left:43.4%;top:58.1%;--c:#8fd8c1" data-story="fellowship" aria-pressed="false"><span class="halo"></span><span class="core"></span><span class="visually-hidden">Fellowship</span></button>
+        <button class="star-btn" style="left:62.7%;top:25.6%;--c:#f2a385" data-story="building" aria-pressed="true"><span class="halo"></span><span class="core"></span><span class="visually-hidden">Building</span></button>
+        <button class="star-btn" style="left:81.2%;top:48.8%;--c:#c9a3f2" data-story="protecting" aria-pressed="false"><span class="halo"></span><span class="core"></span><span class="visually-hidden">Protecting</span></button>
+        <button class="star-btn big" style="left:96.9%;top:20.9%;--c:#8fd8c1" data-story="next" aria-pressed="false"><span class="halo"></span><span class="core"></span><span class="visually-hidden">Still exploring</span></button>
+
+        <div class="star-label" style="left:0.9%;top:75%"><p class="yr">UNTIL 2021</p><h3>Physics</h3>University of Victoria</div>
+        <div class="star-label" style="left:20.5%;top:6.5%"><p class="yr">2021 – 2023</p><h3>Research</h3>Old Canadian magazines, online</div>
+        <div class="star-label" style="left:40.8%;top:63.3%"><p class="yr">2023 – 2024</p><h3>Fellowship</h3>Machine learning at Cybera</div>
+        <div class="star-label" style="left:60.1%;top:-2.8%"><p class="yr">2022 – NOW</p><h3>Building</h3>Software at Appsquire</div>
+        <div class="star-label" style="left:78.6%;top:54%"><p class="yr">ALONG THE WAY</p><h3>Protecting</h3>Keeping people safe</div>
+        <div class="star-label" style="right:6%;top:6.5%;text-align:right;width:180px"><p class="yr">NEXT</p><h3>Still exploring</h3></div>
+      </div>
+
+      <div class="story" id="story" aria-live="polite">
+        <div><p class="yr" id="story-yr">2022 – NOW</p><h3 id="story-title">Building</h3></div>
+        <div><p id="story-text">At Appsquire, a software consultancy in Edmonton, I build and look after the apps, APIs and cloud systems behind a smart hot tub platform: the things people use from their phones or ask their voice assistant to do. I like making technology quietly faster and more dependable. One of my favourite fixes cut voice-command response times in half.</p></div>
+      </div>
+
+      <!-- The stories (also shown as a simple timeline on phones) -->
+      <ol class="timeline">
+        <li id="s-physics" style="--c:#f0c27e"><p class="yr">UNTIL 2021</p><h3>Physics</h3><p>A Bachelor of Science in Physics at the University of Victoria. I studied physics because I wanted to understand how the world works. My degree had a computational focus, so a lot of it was writing code to model and analyse real systems, which is where everything that came next began.</p></li>
+        <li id="s-research" style="--c:#c9a3f2"><p class="yr">2021 – 2023</p><h3>Research</h3><p>At the University of Victoria, I helped bring the Canadian Modernist Magazine Project online: 71 historical magazine issues turned into more than 750 searchable e-texts, some available digitally for the first time. The site is used by over 1,000 researchers a year, and I presented the project at a digital humanities conference.</p></li>
+        <li id="s-fellowship" style="--c:#8fd8c1"><p class="yr">2023 – 2024</p><h3>Fellowship</h3><p>A fellowship at Cybera in Edmonton, where I led a small team building a machine-learning dashboard that predicts pipeline corrosion, and mentored three interns along the way. We were careful to protect the sensitive data behind it.</p></li>
+        <li id="s-building" style="--c:#f2a385"><p class="yr">2022 – NOW</p><h3>Building</h3><p>At Appsquire, a software consultancy in Edmonton, I build and look after the apps, APIs and cloud systems behind a smart hot tub platform: the things people use from their phones or ask their voice assistant to do. I like making technology quietly faster and more dependable. One of my favourite fixes cut voice-command response times in half.</p></li>
+        <li id="s-protecting" style="--c:#c9a3f2"><p class="yr">ALONG THE WAY</p><h3>Protecting</h3><p>Along the way I found the part I care about most: keeping people and their information safe. I've closed sign-in loopholes, cleaned secrets out of code, and rolled out security fixes carefully enough that nobody got locked out.</p></li>
+        <li id="s-next" style="--c:#8fd8c1"><p class="yr">NEXT</p><h3>Still exploring</h3><p>Right now I'm learning to build with AI agents and going deeper into cybersecurity. I'm curious about where both are heading, and how AI is going to shape our future.</p></li>
+      </ol>
+    </section>
+
+    <!-- ============ Notes ============ -->
+    <section class="section reveal" id="notes">
+      <p class="kicker">Lately</p>
+      <h2>Notes on what I'm curious about</h2>
+      <div class="notes">
+        <article class="note n1"><h3>Reading</h3><p><cite>The Expanse</cite></p><small>by James S. A. Corey. Fitting, for a website full of planets.</small></article>
+        <article class="note n2"><h3>Learning</h3><p>Building with AI agents</p><small>and going deeper into cybersecurity.</small></article>
+        <article class="note n3"><h3>Wondering</h3><p>How is AI going to shape our future?</p></article>
+        <article class="note n4"><h3>Outside work</h3><p>Time at home with my husband and our two cats</p><small>Monty and Ori, who are firmly in charge.</small></article>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="contact reveal" id="contact">
+      <p class="kicker">Say hello</p>
+      <h2 class="serif">Thanks for stopping by.</h2>
+      <p class="intro">If something here sparked a thought, or you'd just like to talk about technology, physics or good science fiction, I'd love to hear from you.</p>
+      <div class="links-row">
+        <a class="link-card" href="mailto:dezyjensen@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+          <span style="color:inherit;font-size:inherit;font-weight:500">Email<span>dezyjensen@gmail.com</span></span>
+        </a>
+        <a class="link-card" href="https://www.linkedin.com/in/dezy-jensen/" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          <span style="color:inherit;font-size:inherit;font-weight:500">LinkedIn<span>in/dezy-jensen</span></span>
+        </a>
+        <a class="link-card" href="https://github.com/dezyjensen" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
+          <span style="color:inherit;font-size:inherit;font-weight:500">GitHub<span>dezyjensen</span></span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> Dezy Jensen · Made with curiosity <span class="heart">✦</span> in Edmonton</p>
+  </footer>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
