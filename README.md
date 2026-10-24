@@ -2,7 +2,7 @@
 
 My personal website, live at **https://dezyjensen.github.io**.
 
-A space-themed page with a day mode (plum and peach dawn) and a night mode (aurora sky). It follows the visitor's device setting, and the Day/Night switch in the menu remembers their choice.
+A space-themed page with a day mode (plum and peach dawn) and a night mode (aurora sky). It opens in night mode, and the Day/Night switch in the menu remembers a visitor's choice.
 
 Plain HTML, CSS and a little JavaScript. No build step, no frameworks, and no outside requests (the fonts are hosted here).
 
@@ -21,11 +21,9 @@ Everything you'd want to change is in `index.html`, marked with clear section co
 
 After editing, commit and push to `main`. GitHub Pages updates the live site within a minute or two.
 
-### Adding your photo
+### Changing your photo
 
-1. Save a square-ish photo as `assets/img/dezy.jpg` (about 600 × 600 px is plenty).
-2. In `index.html`, find `<span class="mono">DJ</span>` inside the `sun` element and replace it with:
-   `<img src="assets/img/dezy.jpg" alt="Dezy Jensen">`
+Your photo is `assets/img/dezy.webp`: a square, head-and-shoulders image with a transparent background, so the glowing sun shows behind you. To swap it, replace that file with another square, transparent image (about 640 × 640 px) of the same name.
 
 ## Files
 

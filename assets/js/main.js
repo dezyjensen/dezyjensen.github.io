@@ -20,16 +20,7 @@
     b.addEventListener("click", function () { applyTheme(b.getAttribute("data-set-theme"), true); });
   });
 
-  // Follow the device setting live, unless the visitor picked a theme themselves
-  if (window.matchMedia) {
-    var mq = window.matchMedia("(prefers-color-scheme: light)");
-    var onChange = function (e) {
-      var saved = null;
-      try { saved = localStorage.getItem("theme"); } catch (err) {}
-      if (!saved) applyTheme(e.matches ? "day" : "night", false);
-    };
-    if (mq.addEventListener) mq.addEventListener("change", onChange);
-  }
+  // Night is the default; the switch remembers a visitor's choice.
 
   /* ---------- Sky: stars at night, faint sparkles by day ---------- */
   var canvas = document.getElementById("stars");
